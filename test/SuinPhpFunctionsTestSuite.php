@@ -1,0 +1,5 @@
+<?php
+
+class SuinPhpFunctionsTestSuite
+{
+}

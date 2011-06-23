@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit 
+	processIsolation="false"
+	verbose="false"
+	strict="false"
+	syntaxCheck="true"
+	colors="true">
+	<testsuites>
+		<testsuite name="SuinPhpFunctionsTestSuite">
+			<directory>functions</directory>
+		</testsuite>
+	</testsuites>
+
+
+	<logging>
+		<log 
+			type="coverage-html" 
+			target="report" 
+			charset="UTF-8"
+			yui="true" 
+			highlight="false"
+			lowUpperBound="35" 
+			highLowerBound="70"/>
+	</logging>
+
+	<filter>
+		<whitelist>
+			<directory suffix=".php">../functions</directory>
+			<!-- file>/path/to/file</file -->
+			<exclude>
+				<!-- directory suffix=".php">path/to/dir</directory -->
+				<!-- file>/path/to/file</file -->
+			</exclude>
+		</whitelist>
+	</filter>
+</phpunit>
