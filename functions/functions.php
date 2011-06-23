@@ -47,3 +47,26 @@ function make_password($chars = 8)
 	return substr(str_shuffle('1234567890qwertyuiopasdfghjklzxcvbnm'), 0, $chars);
 }
 
+/**
+ * 正規表現にマッチするかどうがboolで返す
+ */
+function is_match($pattern, $subject)
+{
+	return ( preg_match($pattern, $subject) > 0 );
+}
+
+/**
+ * 正規表現置換に失敗したらNOTICEを出す
+ */
+
+function regex_replace($pattern, $replacement, $subject)
+{
+	$string = preg_replace($pattern, $replacement, $subject)
+
+	if ( $string === null )
+	{
+		trigger_error('preg_replace: failed to replace.', E_USER_NOTICE);
+	}
+
+	return $string;
+}
