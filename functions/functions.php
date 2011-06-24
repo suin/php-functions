@@ -70,3 +70,20 @@ function regex_replace($pattern, $replacement, $subject)
 
 	return $string;
 }
+
+/**
+ * 連想配列をKey-Value配列に変換する
+ */
+function hashToKeyValue(array $data, $keyName, $valueName)
+{
+	$keyValueData = array();
+
+	foreach ( $data as $datum )
+	{
+		$key   = $datum[$keyName];
+		$value = $datum[$valueName];
+		$keyValueData[$key] = $value;
+	}
+
+	return $keyValueData;
+}
