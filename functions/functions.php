@@ -87,3 +87,15 @@ function hashToKeyValue(array $data, $keyName, $valueName)
 
 	return $keyValueData;
 }
+
+/**
+ * オブジェクトの名前空間を返す
+ */
+function get_namespace($obj)
+{
+	$className = get_class($obj);
+	$className = strtr($className, '\\', '/');
+	$className = dirname($className);
+	$namespace = strtr($className, '/', '\\');
+	return $namespace;
+}
