@@ -99,3 +99,18 @@ function get_namespace($obj)
 	$namespace = strtr($className, '/', '\\');
 	return $namespace;
 }
+
+/**
+ * キーストレッチしてより解読困難なパスワードハッシュを生成する
+ */
+function stretch($password, $salt, $stretch = 100000)
+{
+	$key = '';
+
+	for ( $i = 0; $i < $stretch; $i++ )
+	{
+		$key = md5($key.$password.$salt);
+	}
+
+	return $key;
+}
